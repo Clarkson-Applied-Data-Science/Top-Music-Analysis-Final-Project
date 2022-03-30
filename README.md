@@ -5,7 +5,8 @@ It is my plan to analyze how music has changed over the years by looking at the 
  - Beats Per Minute (Tempo)
  - Song Duration
  - Explicit Label
-As well as some more convoluted analysis such as 
+
+As well as some more convoluted analysis such as:
  - Dancibility
  - Energy
  - Genre
