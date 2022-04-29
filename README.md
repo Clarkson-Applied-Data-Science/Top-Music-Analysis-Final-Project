@@ -43,23 +43,24 @@ The program first split the HTML to only inlcude the table of songs and aritsts.
 
 To pull the song out of the row, I split to the song row. The song name often appeared more than once in the song row. The last instance of the song name often proved to be the "cleanest" as other isntances would often contain special characters to represent ampersands or apostropies. To get at the cleanest version of the song name, I had the script count the number of times the word "title" appeared in the song row, as "title" would appear before each instance of the song name. Once the script had a count, I split to be after the last instance, and would get the song name this way. Some song rows did not have any instances of "title" so, a condition was created to split to the song name using the syntax of these rows. The song name would often still have a few errors in it, such as the string: "&amp;" appearing where there should just be an ampersand, so a replace condition was created to swap the error with the correct symbol. 
 
-
-try:
-    song_row=row.split('<td>')[2].split('</td>')[0]
-except:
-    song_row=row.split('<td')[2].split('</td>')[0]
-title_count=song_row.count('title=')
-if title_count != 0:
-    song=song_row.split('title="')[title_count].split('</a>"</td>')[0].split('">')[1].split('</a>')[0]
-    song=song.replace('&amp;','&')
-else:
-    song=song_row.split('"')[1].split('"</td>')[0]
-    song=song.replace('&amp;','&')
+```
+try:
+    song_row=row.split('<td>')[2].split('</td>')[0]
+except:
+    song_row=row.split('<td')[2].split('</td>')[0]
+title_count=song_row.count('title=')
+if title_count != 0:
+    song=song_row.split('title="')[title_count].split('</a>"</td>')[0].split('">')[1].split('</a>')[0]
+    song=song.replace('&amp;','&')
+else:
+    song=song_row.split('"')[1].split('"</td>')[0]
+    song=song.replace('&amp;','&')
+```
 
 The aritst name proved to be more varied in syntax than the song name was. For this reason, try/except was used to catch a few of the variations, the most common of which was first. If the first method failed, another method was attempted. There was one more layer below that. Each layer used a combination of splits to widdle down the artist row until only the artist name was left. Like the song, the artist name was cleaned to remove the ampersand identifier which identified a speacial character and replace it with the actual ampersand character. 
 
 
-
+```
 try:
     artist=row.split('<td>')[3].split('title="')[1].split('">')[0].split(' (')[0]
 except:
@@ -68,7 +69,7 @@ except:
     except:
         artist=row.split('<td>')[1]
 artist=artist.replace('&amp;','&')
-
+```
 
 
 
