@@ -96,7 +96,15 @@ for year in Top100:
     y_tempo[year]=year_tempo
     y_valence[year]=year_valence
     y_duration_ms[year]=year_duration_ms
-#print(all_years_data)
-#print(y_danceability)
+'''
+for year in all_years_data:
+    print(all_years_data[year]['year_danceability'])
+
+'''
+print('| year | danceability | energy | speechiness | instrumentalness | tempo | valence | duration_ms |')
+print('| ---- | ------------ | ------ | ----------- | ---------------- | ----- | ------- | ----------- |')
+for year in all_years_data:
+    print('|',year,'|',all_years_data[year]['year_danceability'],'|',all_years_data[year]['year_energy'],'|',all_years_data[year]['year_speechiness'],'|',all_years_data[year]['year_instrumentalness'],'|',all_years_data[year]['year_tempo'],'|',all_years_data[year]['year_valence'],'|',all_years_data[year]['year_duration_ms'])
+
 
 f.close
