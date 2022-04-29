@@ -106,5 +106,22 @@ print('| ---- | ------------ | ------ | ----------- | ---------------- | ----- |
 for year in all_years_data:
     print('|',year,'|',all_years_data[year]['year_danceability'],'|',all_years_data[year]['year_energy'],'|',all_years_data[year]['year_speechiness'],'|',all_years_data[year]['year_instrumentalness'],'|',all_years_data[year]['year_tempo'],'|',all_years_data[year]['year_valence'],'|',all_years_data[year]['year_duration_ms'])
 
+print('| year | year_danceability_err | year_energy_err | year_speechiness_err | year_instrumentalness_err | year_tempo_err | year_valence_err | year_duration_ms_err |')
+print('| ---- | --------------------- | --------------- | -------------------- | ------------------------- | -------------- | ---------------- | -------------------- |')
+for year in all_years_data:
+    print('|',year,'|',all_years_data[year]['year_danceability_err'],'|',all_years_data[year]['year_energy_err'],'|',all_years_data[year]['year_speechiness_err'],'|',all_years_data[year]['year_instrumentalness_err'],'|',all_years_data[year]['year_tempo_err'],'|',all_years_data[year]['year_valence_err'],'|',all_years_data[year]['year_duration_ms_err'])
 
 f.close
+
+
+
+
+
+
+
+
+
+
+
+
+
