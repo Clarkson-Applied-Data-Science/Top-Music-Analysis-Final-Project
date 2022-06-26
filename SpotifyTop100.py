@@ -1,10 +1,10 @@
 import requests, spotipy, json
 
 #1959 is the first year with a list of 100
-year_min=1960
-year_max=2021
+year_min=1991
+year_max=2020
 top100={}
-token='BQCFL0KfoAUziGSfE7WN6QbXGIEeJ8fTK1KLURI_ox3L94U9JO634eFcBKV77WMMTsL4PJKZ0VecdsUf-sLoDtekHMaDWPDDUKaW9hi0ebpWhoNPjCSWk1uCu1jF6BT8_VYiSVWiMMslNYLQfwB16x9exavGy8pPJ43fiO0e6nLNSMo7acwXd-E3'
+token='BQAcC5VXYoeNS0QHS-d3v2iTDUn6x0Z-ajYQXvGJMj3nftmpcFuVYl8WF_JgaeWnI8za9g1xvmievy9X5yLwQld1D0IaijiFGAMWa0ywoVDBAs4H1n3MuJSigewjLhJk9UOO8lLwPJ2gD8Rd1Ix7jiEI7lJqmljIa0C6-veg1t6yG7SXEFrMIeWc'
 
 year=year_min
 while year<=year_max:
@@ -155,5 +155,5 @@ while year<=year_max:
     top100[year]=song_place
     year+=1
 print(top100)
-with open('spotify_json_data.json','w') as json_out:
+with open('spotify_json_data.json_2','w') as json_out:
     json.dump(top100,json_out)
